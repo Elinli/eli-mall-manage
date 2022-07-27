@@ -17,6 +17,7 @@ module.exports = defineConfig({
       jsx: true,
     },
   },
+  // plugins: ['prettier'],
   extends: [
     'plugin:vue/vue3-recommended',
     'plugin:@typescript-eslint/recommended',
@@ -80,5 +81,7 @@ module.exports = defineConfig({
     camelcase: 'warn',
     // 强制使用一致的缩进
     indent: 'off',
+    semi: 'off',
+    singleQueto: 'off',
   },
 })
