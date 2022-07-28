@@ -1,6 +1,6 @@
 .card {
-  background-color: aqua;
+  background-color: $success;
   .test {
-    color: var(--eli-bg-color-error);
+    color: var(--eli-color-primary);
   }
 }

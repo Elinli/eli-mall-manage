@@ -21,18 +21,8 @@ $font-size: $p14;
 
 $white: #fff;
 $black: #000;
-$primary-color: #00a0e9;
-$warning-color: #ffc107;
-$error-color: #f44336;
-$success-color: #4caf50;
-$disabled-color: #e0e0e0e1;
-
-:root {
-  --eli-bg-color-white: #fff;
-  --eli-bg-color-black: #000;
-  --eli-bg-color-primary: #00a0e9;
-  --eli-bg-color-warning: #ffc107;
-  --eli-bg-color-error: #f44336;
-  --eli-bg-color-success: #4caf50;
-  --eli-bg-color-disabled: #e0e0e0e1;
-}
+$primary: #00a0e9;
+$warning: #ffc107;
+$error: #f44336;
+$success: #4caf50;
+$disabled: #e0e0e0e1;

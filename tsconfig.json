@@ -14,16 +14,24 @@
     "noUnusedParameters": true,
     "lib": ["esnext", "dom"],
     "allowJs": true,
-    "types": ["vite/client", "node"],
+    "types": ["vite/client", "node", "element-plus/global"],
     "suppressImplicitAnyIndexErrors": true,
     "noImplicitAny": true,
     "baseUrl": ".",
     "paths": {
       "/@/*": ["src/*"],
-      "/#/*": ["types/*"]
+      "/#/*": ["src/types/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "vite.config.ts"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "types/**/*.d.ts",
+    "types/**/*.ts",
+    "vite.config.ts"
+  ],
   "exclude": ["node_modules", "dist"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

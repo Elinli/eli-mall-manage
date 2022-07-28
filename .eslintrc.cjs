@@ -81,7 +81,7 @@ module.exports = defineConfig({
     camelcase: 'warn',
     // 强制使用一致的缩进
     indent: 'off',
-    semi: 'off',
-    singleQueto: 'off',
+    semi: 0,
+    singleQueto: 0,
   },
 })

@@ -1,9 +1,11 @@
 <script setup lang="ts">
   import { ref } from 'vue'
+  import { ElMessage } from 'element-plus'
 
   defineProps<{ msg: string }>()
 
   const count = ref(0)
+  ElMessage.error('hellow')
 </script>
 
 <template>
@@ -34,6 +36,7 @@
 
 <style scoped lang="scss">
   @import './style.scss';
+
   .read-the-docs {
     color: #888;
   }

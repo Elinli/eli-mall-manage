@@ -21,8 +21,12 @@
     "clean:cache": "rm -rf node_modules && rm -rf .eslintcache && pnpm install"
   },
   "dependencies": {
-    "ant-design-vue": "^3.2.10",
+    "axios": "^0.27.2",
+    "dayjs": "^1.11.4",
+    "element-plus": "^2.2.11",
     "lodash-es": "^4.17.21",
+    "pinia": "^2.0.17",
+    "pinia-plugin-persist": "^1.0.0",
     "vue": "^3.2.37",
     "vue-router": "^4.1.2"
   },

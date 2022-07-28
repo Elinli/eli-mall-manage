@@ -21,7 +21,7 @@ export function createVitePlugins(viteEnv: any, isBuild: boolean) {
       resolvers: [ElementPlusResolver()],
       dts: true,
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-      dirs: ['src/components/Menu', 'src/components/Table'],
+      dirs: [],
     }),
   ]
 
