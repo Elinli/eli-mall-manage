@@ -14,7 +14,7 @@
     "noUnusedParameters": true,
     "lib": ["esnext", "dom"],
     "allowJs": true,
-    "types": ["vite/client", "node", "element-plus/global"],
+    "types": ["node", "vite/client", "element-plus/global"],
     "suppressImplicitAnyIndexErrors": true,
     "noImplicitAny": true,
     "baseUrl": ".",
@@ -30,7 +30,8 @@
     "src/**/*.vue",
     "types/**/*.d.ts",
     "types/**/*.ts",
-    "vite.config.ts"
+    "vite.config.ts",
+    "auto-imports.d.ts"
   ],
   "exclude": ["node_modules", "dist"],
   "references": [{ "path": "./tsconfig.node.json" }]

@@ -1,8 +1,9 @@
 import { AppRouteRecordRaw } from './constant'
-import { ROUTERVIEW } from './constant'
-const LayoutMap = new Map<string, () => Promise<typeof import('*.vue')>>()
 
-LayoutMap.set('ROUTERVIEW', ROUTERVIEW)
+const ComponentMap = new Map<string, string>()
+ComponentMap.set('ROUTERVIEW', 'layouts/RouterView')
+ComponentMap.set('DEFAULT', 'default/index')
+
 type Modules = Record<string, () => Promise<Recordable>>
 
 let dynamicViewsModules: Modules
@@ -43,9 +44,9 @@ export const dynamicImportRoutes = (routes: AppRouteRecordRaw[] | undefined) => 
     const { component, children } = item
     if (component) {
       // 父级组件 [router-view]
-      const layoutFound = LayoutMap.get(component.toUpperCase())
+      const layoutFound = ComponentMap.get(component.toUpperCase())
       if (layoutFound) {
-        item.component = dynamicImport(dynamicViewsModules, 'default/index')
+        item.component = dynamicImport(dynamicViewsModules, layoutFound)
       } else {
         item.component = dynamicImport(dynamicViewsModules, component as string)
       }
