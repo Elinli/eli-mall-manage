@@ -2,7 +2,7 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import { AppRouteModule } from './constant'
 import { dynamicImportRoutes } from './util'
 
-const modules = import.meta.globEager('./modules/**/*.ts')
+const modules = import.meta.glob('./modules/**/*.ts', { eager: true })
 
 const routeModuleList: AppRouteModule[] = []
 
@@ -12,6 +12,7 @@ Object.keys(modules).forEach((key) => {
   const modList = Array.isArray(mod) ? [...mod] : [mod]
   routeModuleList.push(...modList)
 })
+// console.log(routeModuleList)
 
 const basicRoutes = [
   {
@@ -26,7 +27,7 @@ const basicRoutes = [
   {
     path: '/category',
     name: 'Category',
-    component: 'RouterView',
+    component: 'Default',
     meta: {
       title: 'routes.basic.login',
     },
@@ -60,6 +61,7 @@ const basicRoutes = [
     },
     redirect: '/login',
   },
+  ...routeModuleList,
 ]
 dynamicImportRoutes(basicRoutes)
 console.log(basicRoutes)

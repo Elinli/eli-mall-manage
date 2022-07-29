@@ -1,9 +1,6 @@
 import type { RouteRecordRaw, RouteMeta, RouteRecordRedirectOption } from 'vue-router'
 import { defineComponent } from 'vue'
 
-export const ROUTERVIEW = () => import('/@/layouts/RouterView.vue')
-console.log(ROUTERVIEW)
-
 export type Component<T = any> =
   | ReturnType<typeof defineComponent>
   | (() => Promise<typeof import('*.vue')>)
