@@ -8,6 +8,9 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { visualizer } from 'rollup-plugin-visualizer'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import path from 'path'
+
 export function createVitePlugins(viteEnv: any, isBuild: boolean) {
   const { VITE_LEGACY } = viteEnv
 
@@ -18,7 +21,7 @@ export function createVitePlugins(viteEnv: any, isBuild: boolean) {
       resolvers: [
         ElementPlusResolver(),
         IconsResolver({
-          prefix: 'pre',
+          prefix: 'Icon',
         }),
       ],
       imports: ['vue', 'vue-router'],
@@ -28,7 +31,7 @@ export function createVitePlugins(viteEnv: any, isBuild: boolean) {
       resolvers: [
         ElementPlusResolver(),
         IconsResolver({
-          enabledCollections: ['mdi'],
+          enabledCollections: ['ep'],
         }),
       ],
       dts: true,
@@ -37,6 +40,24 @@ export function createVitePlugins(viteEnv: any, isBuild: boolean) {
     }),
     Icons({
       autoInstall: true,
+    }),
+    createSvgIconsPlugin({
+      // 指定需要缓存的图标文件夹
+      iconDirs: [path.resolve(process.cwd(), 'src/assets/svg')],
+      // 指定symbolId格式
+      symbolId: 'icon-[dir]-[name]',
+
+      /**
+       * 自定义插入位置
+       * @default: body-last
+       */
+      // inject?: 'body-last' | 'body-first'
+
+      /**
+       * custom dom id
+       * @default: __svg__icons__dom__
+       */
+      // customDomId: '__svg__icons__dom__',
     }),
     visualizer({ open: true, gzipSize: true }),
   ]

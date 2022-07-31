@@ -24,44 +24,58 @@ const basicRoutes = [
     },
     redirect: '',
   },
-  {
-    path: '/category',
-    name: 'Category',
-    component: 'Default',
-    meta: {
-      title: 'routes.basic.login',
-    },
-    redirect: '/category/index',
-    children: [
-      {
-        path: 'index',
-        name: 'index',
-        component: 'category/index',
-        meta: {
-          title: 'routes.basic.login',
-          keepAlive: true,
-        },
-      },
-      {
-        path: 'edit',
-        name: 'Edit',
-        component: 'category/Edit',
-        meta: {
-          title: 'routes.basic.login',
-        },
-      },
-    ],
-  },
+
   {
     path: '/',
-    name: 'Home',
-    component: 'RouterView',
+    name: 'Index',
+    component: 'layouts/index',
     meta: {
       title: 'routes.basic.home',
     },
-    redirect: '/login',
+    redirect: '/home',
+    children: [
+      {
+        path: '/home',
+        name: 'Home',
+        component: 'home/index',
+        meta: {
+          orderNo: 500,
+          icon: 'ion:bar-chart-outline',
+          title: 'routes.demo.charts.charts',
+        },
+      },
+
+      ...routeModuleList,
+      {
+        path: '/category',
+        name: 'Category',
+        component: 'Default',
+        meta: {
+          title: 'routes.basic.login',
+        },
+        redirect: '/category/index',
+        children: [
+          {
+            path: 'index',
+            name: 'index',
+            component: 'category/index',
+            meta: {
+              title: 'routes.basic.login',
+              keepAlive: true,
+            },
+          },
+          {
+            path: 'edit',
+            name: 'Edit',
+            component: 'category/Edit',
+            meta: {
+              title: 'routes.basic.login',
+            },
+          },
+        ],
+      },
+    ],
   },
-  ...routeModuleList,
 ]
 dynamicImportRoutes(basicRoutes)
 console.log(basicRoutes)

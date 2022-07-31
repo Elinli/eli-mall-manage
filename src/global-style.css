@@ -1,0 +1,10 @@
+:root {
+  --eli-color-white: #fff;
+  --eli-color-black: #000;
+  --eli-color-primary: #00a0e9;
+  --eli-color-warning: #ffc107;
+  --eli-color-error: #f44336;
+  --eli-color-success: #4caf50;
+  --eli-color-disabled: #e0e0e0e1;
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+}
