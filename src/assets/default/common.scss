@@ -163,7 +163,7 @@ body,
   padding: 8px 0;
   ul li {
     list-style-type: none;
-    padding: 0px 8px;
+    padding: 0px 16px;
     height: 32px;
     @include alignCenter;
     cursor: pointer;
@@ -177,6 +177,9 @@ body,
     &.is-active {
       background-color: var(--el-color-primary-light-9);
       color: var(--el-color-primary);
+      &:hover {
+        background-color: var(--el-color-info-light-9);
+      }
     }
   }
 }

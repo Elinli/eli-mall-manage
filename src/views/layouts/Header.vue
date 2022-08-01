@@ -4,44 +4,27 @@
       <eli-svg-icon name="logo" width="120px" height="28px" />
       &nbsp;
       <eli-svg-icon
-        @click="handleClickCollapse"
-        name="menu-fold"
+        @click="toggleCollapse"
+        :name="isCollapse ? 'menu-fold' : 'menu-unfold'"
         width="20px"
         height="20px"
-        v-if="isCollapse"
-      />
-      <eli-svg-icon
-        name="menu-unfold"
-        width="20px"
-        height="20px"
-        color="#f4f4"
-        v-if="!isCollapse"
-        @click="handleClickCollapse"
       />
     </div>
 
-    <div>
-      <el-button ref="buttonRef" v-click-outside="onClickOutside">Click me</el-button>
-
-      <el-popover ref="popoverRef" :virtual-ref="buttonRef" trigger="hover" virtual-triggering>
-        <ul class="language-box">
-          <li class="language-item is-active">简体中文</li>
-          <li class="language-item">English</li>
-        </ul>
-      </el-popover>
+    <div class="operation-area">
+      <Search />
+      <Fullscreen />
+      <Language />
     </div>
   </div>
 </template>
 <script setup lang="ts">
   import { useApp } from '/@/store/app'
-  import { ClickOutside as vClickOutside } from 'element-plus'
-  const buttonRef = ref()
-  const popoverRef = ref()
-  const onClickOutside = () => {
-    unref(popoverRef).popperRef?.delayHide?.()
-  }
+  import Search from './components/Search.vue'
+  import Fullscreen from './components/Fullscreen.vue'
+  import Language from './components/Language.vue'
+
   const appStore = useApp()
-  console.log(appStore)
 
   const isCollapse = computed({
     get: () => {
@@ -51,7 +34,8 @@
       appStore.setIsCollapse(val)
     },
   })
-  function handleClickCollapse() {
+
+  function toggleCollapse() {
     isCollapse.value = !isCollapse.value
   }
 </script>
@@ -61,6 +45,19 @@
     @include justifyBetween;
     .logo {
       cursor: pointer;
+    }
+    .operation-area {
+      .el-button {
+        color: var(--el-button-text-color);
+        border-radius: 0;
+        padding: 0 8px;
+        height: $p48;
+        font-weight: 700;
+        margin: 0;
+        &:hover {
+          background-color: var(--el-color-primary-light-9);
+        }
+      }
     }
   }
 </style>

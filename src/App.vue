@@ -1,8 +1,6 @@
 <template>
   <div class="app-container">
     <el-config-provider :locale="locale">
-      <el-table mb-1 :data="[]" />
-      <el-pagination :total="100" />
       <router-view />
     </el-config-provider>
   </div>

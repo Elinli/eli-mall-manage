@@ -23,6 +23,8 @@
                 {{ item }}
               </h1>
               Main{{ a }}{{ b }}
+              <el-table mb-1 :data="[]" />
+              <el-pagination :total="100" />
               <router-view />
             </div>
           </el-main>
@@ -98,7 +100,7 @@
             .page-content {
               padding: 16px 16px 8px 16px;
               @include yScroll;
-              height: calc(100vh - 192px);
+              height: calc(100vh - 156px);
             }
           }
         }
