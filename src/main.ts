@@ -15,6 +15,7 @@ import SvgIcon from '/@/components/SvgIcon/index.vue'
 
 const pinia = createPinia()
 pinia.use(piniaPersist)
+
 const app = createApp(App)
 app.component('EliSvgIcon', SvgIcon)
 app.use(pinia).use(router)

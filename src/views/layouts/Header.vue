@@ -20,11 +20,26 @@
       />
     </div>
 
-    <div>user</div>
+    <div>
+      <el-button ref="buttonRef" v-click-outside="onClickOutside">Click me</el-button>
+
+      <el-popover ref="popoverRef" :virtual-ref="buttonRef" trigger="hover" virtual-triggering>
+        <ul class="language-box">
+          <li class="language-item is-active">简体中文</li>
+          <li class="language-item">English</li>
+        </ul>
+      </el-popover>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
   import { useApp } from '/@/store/app'
+  import { ClickOutside as vClickOutside } from 'element-plus'
+  const buttonRef = ref()
+  const popoverRef = ref()
+  const onClickOutside = () => {
+    unref(popoverRef).popperRef?.delayHide?.()
+  }
   const appStore = useApp()
   console.log(appStore)
 

@@ -5,7 +5,6 @@ export const useApp = defineStore('app', {
   state: () => ({
     theme: 'light',
     loginStatus: false,
-    count: 0,
     isCollapse: true,
   }),
   getters: {
@@ -15,16 +14,13 @@ export const useApp = defineStore('app', {
     getIsCollapse: ({ isCollapse }) => isCollapse,
   },
   actions: {
-    increamentCount() {
-      this.count++
-    },
     modifyTheme(theme: string) {
       this.theme = theme
     },
-    checkLogin(loginStatus: Boolean) {
+    checkLogin(loginStatus: boolean) {
       this.loginStatus = loginStatus
     },
-    setIsCollapse(isCollapse: Boolean) {
+    setIsCollapse(isCollapse: boolean) {
       this.isCollapse = isCollapse
     },
   },

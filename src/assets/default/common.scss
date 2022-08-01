@@ -158,3 +158,25 @@ body,
 @mixin border {
   border: 1px solid var(--el-border-color-base);
 }
+
+.el-popper.el-popover {
+  padding: 8px 0;
+  ul li {
+    list-style-type: none;
+    padding: 0px 8px;
+    height: 32px;
+    @include alignCenter;
+    cursor: pointer;
+    &:hover {
+      background-color: var(--el-color-info-light-9);
+    }
+    &:active {
+      background-color: var(--el-color-primary-light-9);
+      color: var(--el-color-primary);
+    }
+    &.is-active {
+      background-color: var(--el-color-primary-light-9);
+      color: var(--el-color-primary);
+    }
+  }
+}

@@ -16,7 +16,7 @@
           <el-main>
             <div class="page-topnav">
               <TopBarNav />
-              <Breadcrumbs />
+              <!-- <Breadcrumbs /> -->
             </div>
             <div class="page-content">
               <h1 v-for="item in 32" :key="item">
@@ -38,7 +38,7 @@
 <script lang="ts" setup>
   import Header from './Header.vue'
   import TopBarNav from './TopBarNav.vue'
-  import Breadcrumbs from './Breadcrumbs.vue'
+  // import Breadcrumbs from './Breadcrumbs.vue'
   import Menu from '/@/components/Menu/index.vue'
   import { useApp } from '/@/store/app'
   const appStore = useApp()
@@ -64,14 +64,14 @@
           overflow-x: hidden;
           box-shadow: 2px 5px 5px 1px $gray;
           &.animation-open {
-            animation: animationOpen 0.5s infinite;
+            animation: animationOpen 0.3s infinite;
             /*Safari 和 Chrome:*/
-            -webkit-animation: animationOpen 0.5s 1;
+            -webkit-animation: animationOpen 0.3s 1;
           }
           &.animation-close {
-            animation: animationClose 0.5s infinite;
+            animation: animationClose 0.3s infinite;
             /*Safari 和 Chrome:*/
-            -webkit-animation: animationClose 0.5s 1;
+            -webkit-animation: animationClose 0.3s 1;
           }
         }
         .el-container {
@@ -88,10 +88,9 @@
           .el-main {
             padding: 0;
             .page-topnav {
-              height: 72px;
               overflow-y: hidden;
               box-sizing: border-box;
-              border-bottom: 1px solid $gray;
+              // border-bottom: 1px solid $gray;
               display: flex;
 
               flex-direction: column;
