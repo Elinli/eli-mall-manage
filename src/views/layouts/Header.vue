@@ -54,6 +54,10 @@
         height: $p48;
         font-weight: 700;
         margin: 0;
+
+        &:focus {
+          background-color: $white;
+        }
         &:hover {
           background-color: var(--el-color-primary-light-9);
         }
