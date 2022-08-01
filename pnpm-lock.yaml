@@ -6,6 +6,7 @@ specifiers:
   '@element-plus/icons-vue': ^2.0.6
   '@iconify-json/ep': ^1.1.6
   '@iconify-json/mdi': ^1.1.29
+  '@types/crypto-js': ^4.1.1
   '@types/lodash-es': ^4.17.6
   '@types/node': ^18.6.1
   '@typescript-eslint/eslint-plugin': ^5.31.0
@@ -16,6 +17,7 @@ specifiers:
   '@vueuse/core': ^9.0.2
   autoprefixer: ^10.4.7
   axios: ^0.27.2
+  crypto-js: ^4.1.1
   dayjs: ^1.11.4
   element-plus: ^2.2.11
   eslint: ^8.20.0
@@ -58,6 +60,7 @@ dependencies:
   '@element-plus/icons-vue': 2.0.6_vue@3.2.37
   '@vueuse/core': 9.0.2_vue@3.2.37
   axios: 0.27.2
+  crypto-js: 4.1.1
   dayjs: 1.11.4
   element-plus: 2.2.11_vue@3.2.37
   lodash-es: 4.17.21
@@ -72,6 +75,7 @@ devDependencies:
   '@commitlint/config-conventional': 17.0.3
   '@iconify-json/ep': 1.1.6
   '@iconify-json/mdi': 1.1.29
+  '@types/crypto-js': 4.1.1
   '@types/lodash-es': 4.17.6
   '@types/node': 18.6.1
   '@typescript-eslint/eslint-plugin': 5.31.0_d5zwcxr4bwkhmuo464cb3a2puu
@@ -1097,6 +1101,13 @@ packages:
     resolution:
       {
         integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==,
+      }
+    dev: true
+
+  /@types/crypto-js/4.1.1:
+    resolution:
+      {
+        integrity: sha512-BG7fQKZ689HIoc5h+6D2Dgq1fABRa0RbBWKBd9SP/MVRVXROflpm5fhwyATX5duFmbStzyzyycPB8qUYKDH3NA==,
       }
     dev: true
 
@@ -2564,6 +2575,13 @@ packages:
       shebang-command: 2.0.0
       which: 2.0.2
     dev: true
+
+  /crypto-js/4.1.1:
+    resolution:
+      {
+        integrity: sha512-o2JlM7ydqd3Qk9CA0L4NL6mTzU2sdx96a+oOfPu8Mkl/PK51vSyoi8/rQ8NknZtk44vq15lmhAj9CIAGwgeWKw==,
+      }
+    dev: false
 
   /css-functions-list/3.1.0:
     resolution:

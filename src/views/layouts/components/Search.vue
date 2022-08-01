@@ -4,7 +4,8 @@
   </el-button>
 </template>
 <script lang="ts" setup>
+  import { encrypt, decrypt } from 'crypto-js/aes'
   function onClickSearch() {
-    console.log('search')
+    console.log('search', encrypt, decrypt)
   }
 </script>
