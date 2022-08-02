@@ -183,3 +183,20 @@ body,
     }
   }
 }
+
+.el-popper.el-dropdown__popper {
+  .el-dropdown-menu {
+    .el-dropdown-menu__item {
+      &:hover {
+        background-color: var(--el-color-primary-light-9);
+        color: var(--el-color-primary);
+      }
+      &.is-disabled {
+        &:hover {
+          background-color: transparent;
+          color: var(--el-text-color-disabled);
+        }
+      }
+    }
+  }
+}

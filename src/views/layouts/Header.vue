@@ -15,14 +15,13 @@
       <Search />
       <Fullscreen />
       <Language />
+      <UserInfo />
     </div>
   </div>
 </template>
 <script setup lang="ts">
   import { useApp } from '/@/store/app'
-  import Search from './components/Search.vue'
-  import Fullscreen from './components/Fullscreen.vue'
-  import Language from './components/Language.vue'
+  import { Search, Fullscreen, Language, UserInfo } from './components'
 
   const appStore = useApp()
 

@@ -4,6 +4,7 @@ interface AppState {
   loginStatus: boolean
   isCollapse: boolean
   fullscreen: boolean
+  lockScreen: boolean
 }
 export const useApp = defineStore('app', {
   state: () =>
@@ -12,6 +13,7 @@ export const useApp = defineStore('app', {
       loginStatus: false,
       isCollapse: true,
       fullscreen: false,
+      lockScreen: false,
     } as AppState),
   getters: {
     getTheme(state) {
@@ -19,6 +21,7 @@ export const useApp = defineStore('app', {
     },
     getIsCollapse: ({ isCollapse }) => isCollapse,
     getFullscreen: ({ fullscreen }) => fullscreen,
+    getLockScreen: ({ lockScreen }) => lockScreen,
   },
   actions: {
     modifyTheme(theme: string) {
@@ -32,6 +35,9 @@ export const useApp = defineStore('app', {
     },
     setFullscreen(fullscreen: boolean) {
       this.fullscreen = fullscreen
+    },
+    setLockScreen(lockScreen: boolean) {
+      this.lockScreen = lockScreen
     },
   },
   persist: {

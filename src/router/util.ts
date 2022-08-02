@@ -16,7 +16,6 @@ function dynamicImport(dynamicViewsModules: Modules, component: string) {
     const startIndex = startFlag ? 0 : 1
     const lastIndex = endFlag ? k.length : k.lastIndexOf('.')
     const subVmpt = k.substring(startIndex, lastIndex)
-    console.log(subVmpt)
     return subVmpt === component
   })
   if (matchKeys?.length === 1) {

@@ -17,7 +17,7 @@
     },
     color: {
       type: String,
-      default: '#333',
+      default: 'red',
     },
     width: {
       type: String,
