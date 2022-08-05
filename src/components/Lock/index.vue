@@ -10,8 +10,9 @@
     <template #header="{ titleId, titleClass }">
       <div class="my-header">
         <h4 :id="titleId" :class="titleClass"
-          ><span v-for="item in 4" :key="item" class="lock-key"><i-ep-key /></span> -{{ title }}-
-          <span v-for="item in 4" :key="item" class="lock-key"><i-ep-key /></span
+          ><span v-for="item in 4" :key="item" class="lock-key"><i-ep-key /></span> ==={{
+            title
+          }}=== <span v-for="item in 4" :key="item" class="lock-key"><i-ep-key /></span
         ></h4>
       </div>
     </template>
@@ -21,7 +22,9 @@
     </div>
     <template #footer>
       <span class="dialog-footer">
-        {{ dayjs(new Date()).format('YYYY/MM/DD') }}{{ dayjs().get('day') }}
+        {{ dayjs(new Date()).format('YYYY/MM/DD') }} &nbsp; &nbsp;星期{{
+          weeks[dayjs().get('day')]
+        }}
         <el-button text @click="onClickClose">close</el-button>
       </span>
     </template>
@@ -31,7 +34,15 @@
 <script lang="ts" setup>
   import dayjs from 'dayjs'
   import { useApp } from '/@/store/app'
-
+  const weeks = ref({
+    1: '一',
+    2: '二',
+    3: '三',
+    4: '四',
+    5: '五',
+    6: '六',
+    7: '天',
+  })
   const props = defineProps({
     title: {
       type: String,
