@@ -10,9 +10,8 @@
     <template #header="{ titleId, titleClass }">
       <div class="my-header">
         <h4 :id="titleId" :class="titleClass"
-          ><span v-for="item in 4" :key="item" class="lock-key"><i-ep-key /></span> ==={{
-            title
-          }}=== <span v-for="item in 4" :key="item" class="lock-key"><i-ep-key /></span
+          ><span v-for="item in 4" :key="item" class="lock-key"><i-ep-key /></span>***{{ title }}***
+          <span v-for="item in 4" :key="item" class="lock-key"><i-ep-key /></span
         ></h4>
       </div>
     </template>
@@ -23,6 +22,7 @@
       <div class="divide">:</div>
       <div class="right content-item">
         <span class="time">{{ minutes }}</span>
+        <div class="second">{{ seconds }}</div>
       </div>
     </div>
     <template #footer>
@@ -46,14 +46,20 @@
     6: '六',
     7: '天',
   })
-  const date = dayjs()
-  const hours = computed(() => {
-    return date.get('h')
-  })
-  const minutes = computed(() => {
-    return date.get('m')
-  })
 
+  const date = dayjs()
+  const hours = ref<string | number>()
+  const minutes = ref<string | number>()
+  const seconds = ref<string | number>()
+  const timer = ref<NodeJS.Timer>()
+  timer.value = setInterval(() => {
+    const h = dayjs().get('h')
+    const m = dayjs().get('m')
+    const s = dayjs().get('s')
+    hours.value = h > 9 ? h : '0' + h
+    minutes.value = m > 9 ? m : '0' + m
+    seconds.value = s > 9 ? s : '0' + s
+  }, 1000)
   const props = defineProps({
     title: {
       type: String,
@@ -71,7 +77,6 @@
     },
   })
   const emits = defineEmits(['dialog-callback'])
-  console.log(emits)
   function onClickClose() {
     emits('dialog-callback')
   }
@@ -108,6 +113,9 @@
           height: 300px;
           @include flexCenter;
           font-size: 126px;
+          animation: animationHidden 1s infinite;
+          /*Safari 和 Chrome:*/
+          -webkit-animation: animationHidden 1s infinite;
         }
         .content-item {
           width: 300px;
@@ -118,6 +126,7 @@
           color: var(--el-color-info-light-3);
           font-size: 28px;
           @include flexCenter;
+          position: relative;
           &.left {
             margin-right: 40px;
           }
@@ -127,7 +136,14 @@
           .time {
             transform: scale(1.5);
             font-size: 126px;
-            color: var(--el-color-info-light-9);
+            color: $white;
+          }
+          .second {
+            position: absolute;
+            right: 0px;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: $white;
           }
         }
       }
@@ -137,6 +153,14 @@
       .dialog-footer {
         color: #f7f5ef;
       }
+    }
+  }
+  @keyframes animationHidden {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
     }
   }
 </style>

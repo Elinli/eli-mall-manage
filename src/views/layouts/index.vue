@@ -66,12 +66,12 @@
           overflow-x: hidden;
           box-shadow: 2px 5px 5px 1px $gray;
           &.animation-open {
-            animation: animationOpen 0.3s infinite;
+            animation: animationOpen 0.3s 1;
             /*Safari 和 Chrome:*/
             -webkit-animation: animationOpen 0.3s 1;
           }
           &.animation-close {
-            animation: animationClose 0.3s infinite;
+            animation: animationClose 0.3s 1;
             /*Safari 和 Chrome:*/
             -webkit-animation: animationClose 0.3s 1;
           }
