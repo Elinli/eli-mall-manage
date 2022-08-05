@@ -41,14 +41,14 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       minify: 'esbuild',
       cssTarget: 'chrome86',
       outDir: 'dist',
-      terserOptions: {
-        compress: {
-          // eslint-disable-next-line camelcase
-          keep_infinity: true,
-          // eslint-disable-next-line camelcase
-          drop_console: true,
-        },
-      },
+      // terserOptions: {
+      //   compress: {
+      //     // eslint-disable-next-line camelcase
+      //     keep_infinity: true,
+      //     // eslint-disable-next-line camelcase
+      //     drop_console: true,
+      //   },
+      // },
       chunkSizeWarningLimit: 2000,
     },
 

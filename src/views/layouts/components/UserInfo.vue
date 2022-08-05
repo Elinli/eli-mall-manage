@@ -20,7 +20,7 @@
       </el-dropdown-menu>
     </template>
   </el-dropdown>
-  <Dialog />
+  <Dialog @dialog-callback="handleDialogCallback" />
 </template>
 
 <script lang="ts" setup>
@@ -53,6 +53,10 @@
       icon: 'lock',
     },
   ])
+
+  function handleDialogCallback() {
+    appStore.setLockScreen(false)
+  }
 </script>
 <style lang="scss">
   .el-dropdown {
