@@ -17,14 +17,17 @@
       </div>
     </template>
     <div class="lock-content">
-      <div class="left content-item"></div>
-      <div class="right content-item"></div>
+      <div class="left content-item">
+        <span class="time">{{ hours }}</span>
+      </div>
+      <div class="divide">:</div>
+      <div class="right content-item">
+        <span class="time">{{ minutes }}</span>
+      </div>
     </div>
     <template #footer>
       <span class="dialog-footer">
-        {{ dayjs(new Date()).format('YYYY/MM/DD') }} &nbsp; &nbsp;星期{{
-          weeks[dayjs().get('day')]
-        }}
+        {{ dayjs(new Date()).format('YYYY/MM/DD') }} &nbsp; &nbsp;星期{{ weeks[date.get('day')] }}
         <el-button text @click="onClickClose">close</el-button>
       </span>
     </template>
@@ -43,6 +46,14 @@
     6: '六',
     7: '天',
   })
+  const date = dayjs()
+  const hours = computed(() => {
+    return date.get('h')
+  })
+  const minutes = computed(() => {
+    return date.get('m')
+  })
+
   const props = defineProps({
     title: {
       type: String,
@@ -92,14 +103,31 @@
         display: flex;
         flex-grow: 1;
         @include justifyCenter;
+        .divide {
+          color: var(--el-color-info-light-3);
+          height: 300px;
+          @include flexCenter;
+          font-size: 126px;
+        }
         .content-item {
           width: 300px;
           height: 300px;
           background-color: var(--el-color-info-dark-2);
           opacity: 0.3;
           border-radius: 20px;
+          color: var(--el-color-info-light-3);
+          font-size: 28px;
+          @include flexCenter;
           &.left {
-            margin-right: 80px;
+            margin-right: 40px;
+          }
+          &.right {
+            margin-left: 40px;
+          }
+          .time {
+            transform: scale(1.5);
+            font-size: 126px;
+            color: var(--el-color-info-light-9);
           }
         }
       }
