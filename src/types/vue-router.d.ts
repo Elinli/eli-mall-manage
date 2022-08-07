@@ -25,7 +25,7 @@ declare module 'vue-router' {
     // Whether the route has been dynamically added
     hideBreadcrumb?: boolean
     // Hide submenu
-    hideChildrenInMenu?: boolean
+    hiddenChildrenInMenu?: boolean
     // Carrying parameters
     carryParam?: boolean
     // Used internally to mark single-level menus

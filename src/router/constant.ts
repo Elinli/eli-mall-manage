@@ -11,11 +11,15 @@ export interface AppRouteRecordRaw extends Omit<RouteRecordRaw, 'meta'> {
   name: string
   meta: RouteMeta
   component?: Component | string
-  components?: Component
   children?: AppRouteRecordRaw[] | undefined
   props?: Recordable
   fullPath?: string
-  redirect?: RouteRecordRedirectOption
+  redirect?: RouteRecordRedirectOption | string
+  icon?: string
+  type?: string
+  hiddenChildren?: boolean
+  uniqueId?: number | string
+  level?: number
 }
 
 export type AppRouteModule = AppRouteRecordRaw

@@ -9,10 +9,7 @@
   >
     <template #header="{ titleId, titleClass }">
       <div class="my-header">
-        <h4 :id="titleId" :class="titleClass"
-          ><span v-for="item in 4" :key="item" class="lock-key"><i-ep-key /></span>***{{ title }}***
-          <span v-for="item in 4" :key="item" class="lock-key"><i-ep-key /></span
-        ></h4>
+        <h4 :id="titleId" :class="titleClass">{{ title }} </h4>
       </div>
     </template>
     <div class="lock-content">
@@ -44,7 +41,7 @@
     4: '四',
     5: '五',
     6: '六',
-    7: '天',
+    0: '天',
   })
 
   const date = dayjs()
@@ -63,7 +60,7 @@
   const props = defineProps({
     title: {
       type: String,
-      default: () => '屏幕已锁定',
+      default: () => '',
     },
   })
   const { title } = toRefs(props)
