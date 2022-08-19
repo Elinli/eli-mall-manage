@@ -1,0 +1,101 @@
+html,
+body,
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
+html,
+body,
+#app {
+  height: 100vh;
+}
+.el-popper.el-popover {
+  padding: 8px 0;
+}
+.el-popper.el-popover ul li {
+  list-style-type: none;
+  padding: 0 16px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.el-popper.el-popover ul li:hover {
+  background-color: var(--el-color-info-light-9);
+}
+.el-popper.el-popover ul li:active,
+.el-popper.el-popover ul li.is-active {
+  background-color: var(--el-color-primary-light-9);
+  color: var(--el-color-primary);
+}
+.el-popper.el-popover ul li.is-active:hover {
+  background-color: var(--el-color-info-light-9);
+}
+.el-popper.el-dropdown__popper .el-dropdown-menu .el-dropdown-menu__item:hover {
+  background-color: var(--el-color-primary-light-9);
+  color: var(--el-color-primary);
+}
+.el-popper.el-dropdown__popper .el-dropdown-menu .el-dropdown-menu__item.is-disabled:hover {
+  background-color: transparent;
+  color: var(--el-text-color-disabled);
+}
+.topbar-nav {
+  height: 40px;
+  font-size: 14px;
+  padding: 0 8px !important;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e6e6e6;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.topbar-nav .icon {
+  height: 28px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--el-color-info-dark-2);
+}
+.topbar-nav .icon.right:hover,
+.topbar-nav .icon.left:hover {
+  background-color: #e6e6e6;
+}
+.topbar-nav .icon.close {
+  transform: scale(0.8);
+  margin-left: 4px;
+}
+.topbar-nav .bar-box {
+  flex-grow: 1;
+  display: flex;
+  padding: 0 8px;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.topbar-nav .bar-box .bar-item {
+  padding: 0 4px 0 8px;
+  height: 28px;
+  border: 1px solid #e6e6e6;
+  box-sizing: border-box;
+  border-bottom: none;
+  display: flex;
+  margin-right: 2px;
+  line-height: 28px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.topbar-nav .bar-box .bar-item:hover {
+  border: 1px solid var(--el-color-primary);
+  border-bottom: none;
+  color: var(--el-color-primary);
+}

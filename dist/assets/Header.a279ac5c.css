@@ -1,0 +1,73 @@
+html,
+body,
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
+html,
+body,
+#app {
+  height: 100vh;
+}
+.el-popper.el-popover {
+  padding: 8px 0;
+}
+.el-popper.el-popover ul li {
+  list-style-type: none;
+  padding: 0 16px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.el-popper.el-popover ul li:hover {
+  background-color: var(--el-color-info-light-9);
+}
+.el-popper.el-popover ul li:active,
+.el-popper.el-popover ul li.is-active {
+  background-color: var(--el-color-primary-light-9);
+  color: var(--el-color-primary);
+}
+.el-popper.el-popover ul li.is-active:hover {
+  background-color: var(--el-color-info-light-9);
+}
+.el-popper.el-dropdown__popper .el-dropdown-menu .el-dropdown-menu__item:hover {
+  background-color: var(--el-color-primary-light-9);
+  color: var(--el-color-primary);
+}
+.el-popper.el-dropdown__popper .el-dropdown-menu .el-dropdown-menu__item.is-disabled:hover {
+  background-color: transparent;
+  color: var(--el-text-color-disabled);
+}
+.header-content {
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-content .logo {
+  cursor: pointer;
+}
+.header-content .operation-area .el-button {
+  color: var(--el-button-text-color);
+  border-radius: 0;
+  padding: 0 8px;
+  height: 48px;
+  font-weight: 700;
+  margin: 0;
+}
+.header-content .operation-area .el-button:focus {
+  background-color: #fff;
+}
+.header-content .operation-area .el-button:hover {
+  background-color: var(--el-color-primary-light-9);
+}

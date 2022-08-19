@@ -8,8 +8,9 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     ElAside: typeof import('element-plus/es')['ElAside']
+    ElBreadcrumb: typeof import('element-plus/es')['ElBreadcrumb']
+    ElBreadcrumbItem: typeof import('element-plus/es')['ElBreadcrumbItem']
     ElButton: typeof import('element-plus/es')['ElButton']
-    ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
     ElContainer: typeof import('element-plus/es')['ElContainer']
     ElDialog: typeof import('element-plus/es')['ElDialog']
     ElDivider: typeof import('element-plus/es')['ElDivider']
@@ -27,11 +28,12 @@ declare module '@vue/runtime-core' {
     ElPopover: typeof import('element-plus/es')['ElPopover']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     ElTable: typeof import('element-plus/es')['ElTable']
+    IEpAddLocation: typeof import('~icons/ep/add-location')['default']
+    IEpAim: typeof import('~icons/ep/aim')['default']
     IEpArrowDown: typeof import('~icons/ep/arrow-down')['default']
     IEpArrowLeftBold: typeof import('~icons/ep/arrow-left-bold')['default']
     IEpArrowRightBold: typeof import('~icons/ep/arrow-right-bold')['default']
     IEpClose: typeof import('~icons/ep/close')['default']
-    IEpKey: typeof import('~icons/ep/key')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
