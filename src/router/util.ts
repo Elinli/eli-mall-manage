@@ -33,12 +33,12 @@ function dynamicImport(dynamicViewsModules: Modules, component: string) {
   }
 }
 
-export const dynamicImportRoutes = (routes: AppRouteRecordRaw[] | undefined) => {
+export const dynamicImportRoutes = (routes: AppRouteRecordRaw[] | undefined | any) => {
   if (!routes) return
 
   dynamicViewsModules = dynamicViewsModules || import.meta.glob('../views/**/*.{vue,tsx}')
 
-  routes.forEach((item) => {
+  routes.forEach((item: any) => {
     const { component, children } = item
     if (component) {
       // 父级组件 [router-view]

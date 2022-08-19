@@ -29,7 +29,7 @@
     get: () => {
       return appStore.getIsCollapse
     },
-    set: (val) => {
+    set: (val: any) => {
       appStore.setIsCollapse(val)
     },
   })
