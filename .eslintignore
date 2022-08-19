@@ -5,7 +5,7 @@ node_modules
 *.ttf
 .vscode
 .idea
-dist。
+dist
 /public
 /docs
 .husky

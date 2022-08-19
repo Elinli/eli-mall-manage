@@ -9,9 +9,9 @@ export type Component<T = any> =
 // @ts-ignore
 export interface AppRouteRecordRaw extends Omit<RouteRecordRaw, 'meta'> {
   name: string
-  meta: RouteMeta
+  meta?: RouteMeta
   component?: Component | string
-  children?: AppRouteRecordRaw[] | undefined
+  children?: AppRouteRecordRaw[] | undefined | null | string
   props?: Recordable
   fullPath?: string
   redirect?: RouteRecordRedirectOption | string
@@ -20,6 +20,8 @@ export interface AppRouteRecordRaw extends Omit<RouteRecordRaw, 'meta'> {
   hiddenChildren?: boolean
   uniqueId?: number | string
   level?: number
+  title?: string
+  parent?: string | null | undefined
 }
 
 export type AppRouteModule = AppRouteRecordRaw

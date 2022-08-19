@@ -42,7 +42,7 @@ const staticMenu: Array<AppRouteModule> = [
     title: '职工',
     parent: 'root',
     icon: 'menu-system',
-    children: null,
+    children: '',
     hiddenChildren: true,
     uniqueId: 1,
     level: 1,
@@ -61,7 +61,7 @@ const staticMenu: Array<AppRouteModule> = [
 ]
 
 // whole menu include button and link and menu
-const wholeMenu: Array<Menu> = []
+const wholeMenu: Array<AppRouteModule> = []
 
 // menu for role
 const roleMenu = {
