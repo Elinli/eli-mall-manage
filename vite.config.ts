@@ -1,3 +1,4 @@
+// @ts-ignore
 import { ConfigEnv, UserConfig, loadEnv } from 'vite'
 import { resolve } from 'path'
 import { wrapperEnv } from './build/utils'
@@ -19,7 +20,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
   const isBuild = command === 'build'
   console.log('command', command, 'mode', mode, 'isBuild', isBuild)
   return {
-    base: './eli-yu-frontend/',
+    base: '/eli-yu-frontend/',
     root,
     resolve: {
       alias: [

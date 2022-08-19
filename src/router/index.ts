@@ -81,7 +81,7 @@ dynamicImportRoutes(basicRoutes)
 console.log(basicRoutes)
 
 const router = createRouter({
-  history: createWebHashHistory('/'),
+  history: createWebHashHistory(),
   routes: basicRoutes as unknown as RouteRecordRaw[],
   strict: true,
   scrollBehavior: () => ({ left: 0, top: 0 }),
