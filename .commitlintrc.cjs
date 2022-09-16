@@ -52,19 +52,32 @@ module.exports = {
       2,
       'always',
       [
+        // 新功能
         'feat',
+        // 修复
         'fix',
+        // 性能
         'perf',
+        // 风格
         'style',
+        // 文档
         'docs',
+        // 测试
         'test',
+        // 重构
         'refactor',
+        // 打包
         'build',
-        'ci',
+        // 集成部署
+        'cicd',
+        // 事务
         'chore',
+        // 还原
         'revert',
         'wip',
+        // 流程
         'workflow',
+        // 类型
         'types',
         'release',
         'update',
