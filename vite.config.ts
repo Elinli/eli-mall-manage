@@ -20,7 +20,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
   const isBuild = command === 'build'
   console.log('command', command, 'mode', mode, 'isBuild', isBuild)
   return {
-    base: '/eli-yu-frontend/',
+    base: '/eli-mall-manage/',
     root,
     resolve: {
       alias: [
