@@ -1,8 +1,8 @@
 import { AppRouteModule } from '/@/router/constant'
 
 const employees: AppRouteModule = {
-  path: '/charts',
-  name: 'Charts',
+  path: '/employ',
+  name: 'Employ',
   component: 'default',
   redirect: '/charts/echarts/map',
   meta: {

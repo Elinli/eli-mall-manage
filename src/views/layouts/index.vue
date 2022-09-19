@@ -19,7 +19,7 @@
               <!-- <Breadcrumbs /> -->
             </div>
             <div class="page-content">
-              <h1 v-for="item in 32" :key="item">
+              <h1 v-for="item in 2" :key="item">
                 {{ item }}
               </h1>
               Main{{ a }}{{ b }}

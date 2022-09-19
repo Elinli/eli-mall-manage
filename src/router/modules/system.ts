@@ -60,6 +60,24 @@ const system: AppRouteModule = {
         title: 'Roles',
       },
     },
+    {
+      path: 'tests',
+      name: 'Tests',
+      component: 'default',
+      meta: {
+        title: 'tests',
+      },
+      children: [
+        {
+          path: 'testone',
+          name: 'Testone',
+          component: 'system/testss/testsss/index',
+          meta: {
+            title: 'tests',
+          },
+        },
+      ],
+    },
   ],
 }
 
