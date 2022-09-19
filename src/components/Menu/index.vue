@@ -5,16 +5,15 @@
     :collapse="isCollapse"
     @open="handleOpen"
     @close="handleClose"
+    :router="true"
   >
-    <template v-for="menuItem in menuData" :key="menuItem.path">
-      <RenderMenu :menuItem="menuItem" />
-    </template>
+    <Render :menuData="menuData" />
   </el-menu>
 </template>
 
 <script lang="ts" setup>
   import { useApp } from '/@/store/app'
-  import RenderMenu from './components/RenderMenu.vue'
+  import Render from './components/Render'
   import { staticMenu } from './config'
   import { AppRouteModule } from '/@/router/constant'
   let menuData = ref<Array<AppRouteModule>>([])
@@ -39,6 +38,6 @@
 
   .el-menu-vertical-demo:not(.el-menu--collapse) {
     width: 200px;
-    min-height: 400px;
+    height: 100%;
   }
 </style>
