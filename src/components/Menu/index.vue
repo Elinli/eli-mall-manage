@@ -1,10 +1,8 @@
 <template>
   <el-menu
-    default-active="2"
+    :default-active="currentActiveRoute"
     class="el-menu-vertical-demo"
     :collapse="isCollapse"
-    @open="handleOpen"
-    @close="handleClose"
     :router="true"
   >
     <Render :menuData="menuData" />
@@ -16,18 +14,23 @@
   import Render from './components/Render'
   import { staticMenu } from './config'
   import { AppRouteModule } from '/@/router/constant'
+  import { useRouter } from 'vue-router'
+
   let menuData = ref<Array<AppRouteModule>>([])
   menuData.value = staticMenu as Array<AppRouteModule>
+
   const appStore = useApp()
-  console.log(appStore)
+  const router = useRouter()
 
   const isCollapse = computed(() => appStore.getIsCollapse)
-  const handleOpen = (key: string, keyPath: string[]) => {
-    console.log(key, keyPath)
-  }
-  const handleClose = (key: string, keyPath: string[]) => {
-    console.log(key, keyPath)
-  }
+
+  const currentActiveRoute = computed(() => {
+    if (router.currentRoute.value.meta.currentActiveMenu) {
+      return router.currentRoute.value.meta.currentActiveMenu
+    } else {
+      return router.currentRoute.value.path
+    }
+  })
 </script>
 
 <style lang="scss">

@@ -1,6 +1,14 @@
 import { AppRouteModule } from '/@/router/constant'
 const staticMenu: Array<AppRouteModule> = [
   {
+    name: 'home',
+    path: '/home',
+    title: '首页',
+    parent: 'root',
+    icon: 'menu-home',
+    hiddenChildren: true,
+  },
+  {
     name: 'charts',
     path: '/charts',
     title: '图标',
@@ -65,7 +73,7 @@ const staticMenu: Array<AppRouteModule> = [
   },
   {
     name: 'category',
-    path: '/category',
+    path: '/category/index',
     title: '分类',
     parent: 'root',
     icon: 'menu-system',

@@ -14,7 +14,7 @@
         </el-aside>
         <el-container>
           <el-main>
-            <div class="page-topnav">
+            <div class="page-topnav" v-if="true">
               <TopBarNav />
               <!-- <Breadcrumbs /> -->
             </div>
@@ -101,6 +101,7 @@
               padding: 16px 16px 8px 16px;
               @include yScroll;
               height: calc(100vh - 156px);
+              flex-grow: 1;
             }
           }
         }
