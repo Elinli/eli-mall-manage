@@ -116,7 +116,7 @@
     }
     .scroll-wrapper {
       position: relative;
-      width: 90%;
+      width: calc(100vw - 290px);
       white-space: nowrap;
       overflow: hidden;
       .scroll-content {
