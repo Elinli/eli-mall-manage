@@ -1,6 +1,5 @@
 import { toRaw } from 'vue'
-import { ElMenuItem } from 'element-plus'
-import { ElSubMenu } from 'element-plus'
+import { ElMenuItem, ElSubMenu } from 'element-plus'
 import SvgIcon from '/@/components/SvgIcon/index.vue'
 import { AppRouteModule } from '/@/router/constant'
 

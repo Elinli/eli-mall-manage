@@ -1,10 +1,15 @@
 import { defineStore } from 'pinia'
+interface NavbarItem {
+  path: string
+  title: string
+}
 interface AppState {
   theme: string
   loginStatus: boolean
   isCollapse: boolean
   fullscreen: boolean
   lockScreen: boolean
+  navbar: Array<NavbarItem>
 }
 export const useApp = defineStore('app', {
   state: () =>
@@ -14,6 +19,7 @@ export const useApp = defineStore('app', {
       isCollapse: true,
       fullscreen: false,
       lockScreen: false,
+      navbar: [],
     } as AppState),
   getters: {
     getTheme(state) {
@@ -38,6 +44,9 @@ export const useApp = defineStore('app', {
     },
     setLockScreen(lockScreen: boolean) {
       this.lockScreen = lockScreen
+    },
+    setNavbar(navbar: []) {
+      this.navbar = navbar
     },
   },
   persist: {

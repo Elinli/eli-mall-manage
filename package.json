@@ -21,6 +21,7 @@
     "clean:cache": "rm -rf node_modules && rm -rf .eslintcache && pnpm install"
   },
   "dependencies": {
+    "@better-scroll/core": "^2.4.2",
     "@element-plus/icons-vue": "^2.0.6",
     "@vueuse/core": "^9.0.2",
     "axios": "^0.27.2",

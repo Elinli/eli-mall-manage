@@ -20,10 +20,9 @@
   menuData.value = staticMenu as Array<AppRouteModule>
 
   const appStore = useApp()
-  const router = useRouter()
-
   const isCollapse = computed(() => appStore.getIsCollapse)
 
+  const router = useRouter()
   const currentActiveRoute = computed(() => {
     if (router.currentRoute.value.meta.currentActiveMenu) {
       return router.currentRoute.value.meta.currentActiveMenu

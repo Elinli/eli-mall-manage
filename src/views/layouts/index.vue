@@ -29,7 +29,7 @@
             </div>
           </el-main>
           <el-footer>
-            Copyright © 2013-2022 Eli eli.hero.com All Rights Reserved. 备案号：川ICP备15874534号-1
+            Copyright © 2013-2022 Eli eli.xin.com All Rights Reserved. 备案号：川ICP备15874534号-1
           </el-footer>
         </el-container>
       </el-container>

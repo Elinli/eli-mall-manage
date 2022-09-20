@@ -12,7 +12,6 @@ Object.keys(modules).forEach((key) => {
   const modList = Array.isArray(mod) ? [...mod] : [mod]
   routeModuleList.push(...modList)
 })
-console.log(routeModuleList)
 
 const basicRoutes = [
   {
@@ -49,12 +48,8 @@ const basicRoutes = [
     ],
   },
 ]
-console.log(1)
 
 dynamicImportRoutes(basicRoutes)
-console.log(2)
-
-console.log(basicRoutes)
 
 const router = createRouter({
   history: createWebHashHistory(),
