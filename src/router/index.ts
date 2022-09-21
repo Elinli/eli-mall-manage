@@ -59,7 +59,6 @@ const router = createRouter({
 })
 
 router.beforeEach((to, _from, next) => {
-  console.log(to)
   const appStore = useApp()
   console.log(appStore)
   appStore.setNavbar(to)
