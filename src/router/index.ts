@@ -2,6 +2,8 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import { AppRouteModule } from './constant'
 import { dynamicImportRoutes } from './util'
 import { useApp } from '../store/app'
+import NProgress from 'nprogress' // Progress 进度条;
+import 'nprogress/nprogress.css' // Progress 进度条样式
 const modules = import.meta.glob('./modules/**/*.ts', { eager: true })
 
 const routeModuleList: AppRouteModule[] = []
@@ -59,10 +61,12 @@ const router = createRouter({
 })
 
 router.beforeEach((to, _from, next) => {
+  NProgress.start()
   const appStore = useApp()
   console.log(appStore)
   appStore.setNavbar(to)
   next()
+  NProgress.done()
 })
 
 export default router
