@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 interface NavbarItem {
   path: string
   title: string
+  meta: any
 }
 interface AppState {
   theme: string
