@@ -4,6 +4,7 @@
     class="el-menu-vertical-demo"
     :collapse="isCollapse"
     :router="true"
+    @select="handleSelect"
   >
     <Render :menuData="menuData" />
   </el-menu>
@@ -30,6 +31,10 @@
       return router.currentRoute.value.path
     }
   })
+
+  const handleSelect = (key: string, keyPath: string[]) => {
+    console.log(key, keyPath)
+  }
 </script>
 
 <style lang="scss">

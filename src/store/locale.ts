@@ -19,7 +19,7 @@ export const useLocale = defineStore('locale', {
     strategies: [
       {
         key: 'locale',
-        storage: localStorage,
+        storage: sessionStorage,
         paths: ['locale'],
       },
     ],

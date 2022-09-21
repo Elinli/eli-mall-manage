@@ -28,6 +28,7 @@ export const useApp = defineStore('app', {
     getIsCollapse: ({ isCollapse }) => isCollapse,
     getFullscreen: ({ fullscreen }) => fullscreen,
     getLockScreen: ({ lockScreen }) => lockScreen,
+    getNavbar: ({ navbar }) => navbar,
   },
   actions: {
     modifyTheme(theme: string) {
@@ -45,8 +46,14 @@ export const useApp = defineStore('app', {
     setLockScreen(lockScreen: boolean) {
       this.lockScreen = lockScreen
     },
-    setNavbar(navbar: []) {
-      this.navbar = navbar
+    setNavbar(navbarItem: any, type?: string) {
+      if (type === 'delete') {
+        this.navbar = this.navbar.filter((barItem) => barItem.path !== navbarItem.path)
+      } else {
+        console.log(this.navbar)
+        const isExist = this.navbar.some((item) => item.path === navbarItem.path)
+        if (!isExist) this.navbar.push(navbarItem)
+      }
     },
   },
   persist: {
@@ -54,7 +61,7 @@ export const useApp = defineStore('app', {
     strategies: [
       {
         key: 'app',
-        storage: localStorage,
+        storage: sessionStorage,
       },
     ],
   },

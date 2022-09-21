@@ -8,14 +8,14 @@ const system: AppRouteModule = {
   meta: {
     orderNo: 500,
     icon: 'ion:bar-chart-outline',
-    title: 'routes.demo.system.system',
+    title: '系统管理',
   },
   children: [
     {
       path: 'menu',
       name: 'Menu',
       meta: {
-        title: 'routes.demo.system.baiduMap',
+        title: '菜单管理',
       },
       component: 'system/menu/index',
       // component: () => import('/@/views/system/map/Baidu.vue'),
@@ -24,7 +24,7 @@ const system: AppRouteModule = {
       path: 'account',
       name: 'Account',
       meta: {
-        title: 'routes.demo.system.aMap',
+        title: '账户管理',
       },
       component: 'system/account/index',
       // component: () => import('/@/views/system/map/Gaode.vue'),
@@ -33,7 +33,7 @@ const system: AppRouteModule = {
       path: 'account_detail/:id',
       name: 'AccountDetail',
       meta: {
-        title: 'routes.demo.system.aMap',
+        title: '账号详情',
         hideMenu: true,
         ignoreKeepAlive: true,
         showMenu: false,
@@ -46,7 +46,7 @@ const system: AppRouteModule = {
       path: 'process',
       name: 'Process',
       meta: {
-        title: 'routes.demo.system.googleMap',
+        title: '流程管理',
       },
       component: 'system/process/index',
       // component: () => import('/@/views/system/map/Google.vue'),
@@ -57,7 +57,7 @@ const system: AppRouteModule = {
       name: 'Roles',
       component: 'system/roles/index',
       meta: {
-        title: 'Roles',
+        title: '角色管理',
       },
     },
     {
@@ -65,7 +65,7 @@ const system: AppRouteModule = {
       name: 'Tests',
       component: 'default',
       meta: {
-        title: 'tests',
+        title: '测试管理',
       },
       children: [
         {
@@ -73,7 +73,7 @@ const system: AppRouteModule = {
           name: 'Testone',
           component: 'system/testss/testsss/index',
           meta: {
-            title: 'tests',
+            title: '单元测试',
           },
         },
       ],

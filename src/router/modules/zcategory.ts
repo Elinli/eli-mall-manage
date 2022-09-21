@@ -5,7 +5,7 @@ const category: AppRouteModule = {
   name: 'Category',
   component: 'Default',
   meta: {
-    title: 'routes.basic.login',
+    title: '分类',
   },
   redirect: '/category/index',
   children: [
@@ -14,7 +14,7 @@ const category: AppRouteModule = {
       name: 'index',
       component: 'category/index',
       meta: {
-        title: 'routes.basic.login',
+        title: '分类',
         keepAlive: true,
       },
     },
@@ -23,7 +23,7 @@ const category: AppRouteModule = {
       name: 'Edit',
       component: 'category/Edit',
       meta: {
-        title: 'routes.basic.login',
+        title: '编辑',
       },
     },
   ],

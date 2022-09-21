@@ -8,32 +8,32 @@ const employees: AppRouteModule = {
   meta: {
     orderNo: 500,
     icon: 'ion:bar-chart-outline',
-    title: 'routes.demo.charts.charts',
+    title: '图表',
   },
   children: [
     {
       path: 'baiduMap',
       name: 'BaiduMap',
       meta: {
-        title: 'routes.demo.charts.baiduMap',
+        title: '百度',
       },
       component: 'charts/map/Baidu',
       // component: () => import('/@/views/charts/map/Baidu.vue'),
     },
     {
-      path: 'aMap',
-      name: 'AMap',
+      path: 'gaode',
+      name: 'Gaode',
       meta: {
-        title: 'routes.demo.charts.aMap',
+        title: '高德',
       },
       component: 'charts/map/Gaode',
       // component: () => import('/@/views/charts/map/Gaode.vue'),
     },
     {
-      path: 'googleMap',
-      name: 'GoogleMap',
+      path: 'google',
+      name: 'Google',
       meta: {
-        title: 'routes.demo.charts.googleMap',
+        title: '谷歌',
       },
       component: 'charts/map/Google',
       // component: () => import('/@/views/charts/map/Google.vue'),

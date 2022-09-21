@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import { AppRouteModule } from './constant'
 import { dynamicImportRoutes } from './util'
-
+import { useApp } from '../store/app'
 const modules = import.meta.glob('./modules/**/*.ts', { eager: true })
 
 const routeModuleList: AppRouteModule[] = []
@@ -19,7 +19,7 @@ const basicRoutes = [
     name: 'Login',
     component: 'login/index',
     meta: {
-      title: 'routes.basic.login',
+      title: '登陆',
     },
     redirect: '',
   },
@@ -40,7 +40,7 @@ const basicRoutes = [
         meta: {
           orderNo: 500,
           icon: 'ion:bar-chart-outline',
-          title: 'routes.demo.charts.charts',
+          title: '首页',
         },
       },
 
@@ -56,6 +56,14 @@ const router = createRouter({
   routes: basicRoutes as unknown as RouteRecordRaw[],
   strict: true,
   scrollBehavior: () => ({ left: 0, top: 0 }),
+})
+
+router.beforeEach((to, from, next) => {
+  console.log(to)
+  const appStore = useApp()
+  console.log(appStore)
+  appStore.setNavbar(to)
+  next()
 })
 
 export default router

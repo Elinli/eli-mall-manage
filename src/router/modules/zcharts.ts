@@ -8,14 +8,14 @@ const charts: AppRouteModule = {
   meta: {
     orderNo: 500,
     icon: 'ion:bar-chart-outline',
-    title: 'routes.demo.charts.charts',
+    title: '图表',
   },
   children: [
     {
       path: 'pie',
       name: 'Pie',
       meta: {
-        title: 'routes.demo.charts.baiduMap',
+        title: '饼图',
       },
       component: 'charts/Pie',
       // component: () => import('/@/views/charts/map/Baidu.vue'),
@@ -24,7 +24,7 @@ const charts: AppRouteModule = {
       path: 'line',
       name: 'Line',
       meta: {
-        title: 'routes.demo.charts.aMap',
+        title: '线图',
       },
       component: 'charts/Line',
       // component: () => import('/@/views/charts/map/Gaode.vue'),
@@ -35,7 +35,7 @@ const charts: AppRouteModule = {
       name: 'Map',
       component: 'default',
       meta: {
-        title: 'map',
+        title: '地图',
       },
       children: [
         {
@@ -43,7 +43,7 @@ const charts: AppRouteModule = {
           name: 'Baidu',
           component: 'charts/map/Baidu',
           meta: {
-            title: 'baidu',
+            title: '百度',
           },
         },
         {
@@ -51,7 +51,7 @@ const charts: AppRouteModule = {
           name: 'Gaode',
           component: 'charts/map/Gaode',
           meta: {
-            title: 'Gaode',
+            title: '高德',
           },
         },
         {
@@ -59,7 +59,7 @@ const charts: AppRouteModule = {
           name: 'Google',
           component: 'charts/map/Google',
           meta: {
-            title: 'Google',
+            title: '谷歌',
           },
         },
       ],
