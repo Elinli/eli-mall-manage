@@ -1,5 +1,5 @@
 import type { App } from 'vue'
-import type { I18n, I18nOptions } from 'vue-i18n'
+import type { I18nOptions } from 'vue-i18n'
 
 import { createI18n } from 'vue-i18n'
 import { useLocaleStoreWithOut } from '../store/modules/locale'
@@ -25,6 +25,7 @@ async function createI18nOptions(): Promise<I18nOptions> {
     silentTranslationWarn: true, // true - warning off
     missingWarn: false,
     silentFallbackWarn: true,
+    availableLocales: ['en', 'zh-CN'],
   }
 }
 
@@ -32,6 +33,6 @@ async function createI18nOptions(): Promise<I18nOptions> {
 // @ts-ignore
 export async function setupI18n(app: App) {
   const options = await createI18nOptions()
-  i18n = createI18n(options) as unknown as I18n
+  i18n = createI18n(options)
   app.use(i18n)
 }
