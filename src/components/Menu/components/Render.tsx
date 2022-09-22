@@ -2,7 +2,8 @@ import { toRaw } from 'vue'
 import { ElMenuItem, ElSubMenu } from 'element-plus'
 import SvgIcon from '/@/components/SvgIcon/index.vue'
 import { AppRouteModule } from '/@/router/constant'
-import { useI18n } from '/@/hooks/useI18n'
+import { useConfigI18n } from '/@/hooks/useI18n'
+// import { useI18n } from 'vue-i18n'
 export default defineComponent({
   name: 'Render',
   props: {
@@ -12,7 +13,7 @@ export default defineComponent({
     },
   },
   setup(this, props, _ctx) {
-    const { t } = useI18n()
+    const { t } = useConfigI18n()
     const menuData = toRaw(props).menuData as unknown as AppRouteModule[]
     const renderSubmenu = (menuItem: AppRouteModule | any) => {
       const slots = {

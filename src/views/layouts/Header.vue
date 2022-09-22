@@ -24,8 +24,8 @@
 <script setup lang="ts">
   import { useApp } from '../../store/modules/app'
   import { Search, Fullscreen, Language, UserInfo } from './components'
-  import { useI18n } from '/@/hooks/useI18n'
-  const { t } = useI18n()
+  import { useConfigI18n } from '/@/hooks/useI18n'
+  const { t } = useConfigI18n()
 
   const appStore = useApp()
 

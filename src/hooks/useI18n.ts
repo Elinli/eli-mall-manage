@@ -21,7 +21,7 @@ function getKey(namespace: string | undefined, key: string) {
   return `${namespace}.${key}`
 }
 // @ts-ignore
-export function useI18n(namespace?: string): {
+export function useConfigI18n(namespace?: string): {
   t: I18nGlobalTranslation
 } {
   const normalFn = {
@@ -38,8 +38,8 @@ export function useI18n(namespace?: string): {
   const tFn: I18nGlobalTranslation = (key: string) => {
     if (!key) return ''
     if (!key.includes('.') && !namespace) return key
-    // return t(getKey(namespace, key), ...(arg as I18nTranslationRestParameters))
-    return t(getKey(namespace, key))
+    console.log(namespace, key)
+    return t(key)
   }
   return {
     ...methods,
