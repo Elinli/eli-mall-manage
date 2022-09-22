@@ -3,7 +3,8 @@ import { AppRouteModule } from '/@/router/constant'
 const charts: AppRouteModule = {
   path: '/charts',
   name: 'charts',
-  component: 'default',
+  icon: 'menu-home',
+  component: 'Layout',
   redirect: '/charts/pie',
   meta: {
     orderNo: 500,

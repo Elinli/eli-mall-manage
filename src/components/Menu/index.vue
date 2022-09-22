@@ -11,14 +11,16 @@
 </template>
 
 <script lang="ts" setup>
-  import { useApp } from '/@/store/app'
+  import { useApp } from '../../store/modules/app'
   import Render from './components/Render'
+  import { asyncRoutes } from '/@/router/routes/index'
   import { staticMenu } from './config'
   import { AppRouteModule } from '/@/router/constant'
   import { useRouter } from 'vue-router'
+  console.log(staticMenu, asyncRoutes)
 
   let menuData = ref<Array<AppRouteModule>>([])
-  menuData.value = staticMenu as Array<AppRouteModule>
+  menuData.value = asyncRoutes as Array<AppRouteModule>
 
   const appStore = useApp()
   const isCollapse = computed(() => appStore.getIsCollapse)

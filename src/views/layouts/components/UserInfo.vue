@@ -25,7 +25,7 @@
 
 <script lang="ts" setup>
   import Dialog from '/@/components/Lock/index.vue'
-  import { useApp } from '/@/store/app'
+  import { useApp } from '../../../store/modules/app'
   const appStore = useApp()
   const handleCommand = (command: string | number | object) => {
     ElMessage(`click on item ${command}`)

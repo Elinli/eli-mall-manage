@@ -33,7 +33,7 @@
 
 <script lang="ts" setup>
   import dayjs from 'dayjs'
-  import { useApp } from '/@/store/app'
+  import { useApp } from '../../store/modules/app'
   const weeks = ref({
     1: '一',
     2: '二',

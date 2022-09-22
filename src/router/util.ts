@@ -2,6 +2,7 @@ import { AppRouteRecordRaw } from './constant'
 const ComponentMap = new Map<string, string>()
 
 ComponentMap.set('ROUTERVIEW', 'layouts/RouterView')
+ComponentMap.set('LAYOUT', 'layouts/index')
 ComponentMap.set('DEFAULT', 'default/index')
 type Modules = Record<string, () => Promise<Recordable>>
 
@@ -40,9 +41,11 @@ export const dynamicImportRoutes = (routes: AppRouteRecordRaw[] | undefined | an
 
   routes.forEach((item: any) => {
     const { component, children } = item
+
     if (component) {
       // 父级组件 [router-view]
       const layoutFound = ComponentMap.get(component.toUpperCase())
+
       if (layoutFound) {
         item.component = dynamicImport(dynamicViewsModules, layoutFound)
       } else {

@@ -17,7 +17,7 @@ export const useApp = defineStore('app', {
     ({
       theme: 'light',
       loginStatus: false,
-      isCollapse: true,
+      isCollapse: false,
       fullscreen: false,
       lockScreen: false,
       navbar: [],

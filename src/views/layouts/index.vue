@@ -42,7 +42,7 @@
   import TopBarNav from './TopBarNav.vue'
   // import Breadcrumbs from './Breadcrumbs.vue'
   import Menu from '/@/components/Menu/index.vue'
-  import { useApp } from '/@/store/app'
+  import { useApp } from '../../store/modules/app'
   const appStore = useApp()
   console.log(appStore)
   const a = ref(1)

@@ -3,7 +3,8 @@ import { AppRouteModule } from '/@/router/constant'
 const system: AppRouteModule = {
   path: '/system',
   name: 'System',
-  component: 'default',
+  component: 'Layout',
+  icon: 'menu-home',
   redirect: '/system/menu',
   meta: {
     orderNo: 500,
@@ -18,7 +19,6 @@ const system: AppRouteModule = {
         title: '菜单管理',
       },
       component: 'system/menu/index',
-      // component: () => import('/@/views/system/map/Baidu.vue'),
     },
     {
       path: 'account',
@@ -27,7 +27,6 @@ const system: AppRouteModule = {
         title: '账户管理',
       },
       component: 'system/account/index',
-      // component: () => import('/@/views/system/map/Gaode.vue'),
     },
     {
       path: 'account_detail/:id',
@@ -71,7 +70,7 @@ const system: AppRouteModule = {
         {
           path: 'testone',
           name: 'Testone',
-          component: 'system/testss/testsss/index',
+          component: 'system/testss/unittest/index',
           meta: {
             title: '单元测试',
           },

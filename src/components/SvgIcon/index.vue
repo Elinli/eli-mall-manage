@@ -21,11 +21,11 @@
     },
     width: {
       type: String,
-      default: '1.2em',
+      default: '1.5em',
     },
     height: {
       type: String,
-      default: '1.2em',
+      default: '1.5em',
     },
   })
   const symbolId = computed(() => `#${props.prefix}-${props.name}`)

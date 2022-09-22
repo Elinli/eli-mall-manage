@@ -1,19 +1,21 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
-import { AppRouteModule } from './constant'
 import { dynamicImportRoutes } from './util'
-import { useApp } from '../store/app'
+import { useApp } from '../store/modules/app'
 import NProgress from 'nprogress' // Progress 进度条;
 import 'nprogress/nprogress.css' // Progress 进度条样式
-const modules = import.meta.glob('./modules/**/*.ts', { eager: true })
+import { asyncRoutes } from './routes'
 
-const routeModuleList: AppRouteModule[] = []
+// const modules = import.meta.glob('./routes/modules/**/*.ts', { eager: true })
 
-Object.keys(modules).forEach((key) => {
-  const module: any = modules[key]
-  const mod = module.default || {}
-  const modList = Array.isArray(mod) ? [...mod] : [mod]
-  routeModuleList.push(...modList)
-})
+// const routeModuleList: AppRouteModule[] = []
+
+// Object.keys(modules).forEach((key) => {
+//   const module: any = modules[key]
+//   const mod = module.default || {}
+//   const modList = Array.isArray(mod) ? [...mod] : [mod]
+//   routeModuleList.push(...modList)
+// })
+// console.log('routeModuleList', routeModuleList)
 
 const basicRoutes = [
   {
@@ -28,30 +30,15 @@ const basicRoutes = [
 
   {
     path: '/',
-    name: 'Index',
-    component: 'layouts/index',
+    name: 'root',
     meta: {
-      title: 'routes.basic.home',
+      title: 'root',
     },
-    redirect: '/home',
-    children: [
-      {
-        path: '/home',
-        name: 'Home',
-        component: 'home/index',
-        meta: {
-          orderNo: 500,
-          icon: 'ion:bar-chart-outline',
-          title: '首页',
-        },
-      },
-
-      ...routeModuleList,
-    ],
+    redirect: '/dashboard',
   },
 ]
 
-dynamicImportRoutes(basicRoutes)
+console.log(basicRoutes)
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -59,13 +46,27 @@ const router = createRouter({
   strict: true,
   scrollBehavior: () => ({ left: 0, top: 0 }),
 })
-
-router.beforeEach((to, _from, next) => {
+let isAsync = true
+router.beforeEach(async (to, _from, next) => {
   NProgress.start()
   const appStore = useApp()
-  console.log(appStore)
   appStore.setNavbar(to)
-  next()
+  if (to.path === '/login' || to.path === '/') {
+    next()
+    NProgress.done()
+    return
+  }
+  if (isAsync) {
+    await dynamicImportRoutes(asyncRoutes)
+    asyncRoutes.forEach((route) => {
+      router.addRoute(route as unknown as RouteRecordRaw)
+    })
+    isAsync = false
+    next({ path: to.fullPath, replace: true, query: to.query })
+  } else {
+    next()
+  }
+
   NProgress.done()
 })
 

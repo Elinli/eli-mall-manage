@@ -27,7 +27,7 @@
 </template>
 <script setup lang="ts">
   import BScroll from '@better-scroll/core'
-  import { useApp } from '/@/store/app'
+  import { useApp } from '../../store/modules/app'
   const router = useRouter()
   const appStore = useApp()
   const route = useRoute()
@@ -117,7 +117,9 @@
       const translateX = Number(rltSlt[rltSlt.length - 4])
       if (type === 'pre') {
         if (translateX === 0) return
-        scrollTo = translateX + scrollRef.value.clientWidth - 30
+        console.log('pre', translateX)
+        const scrollWidth = translateX + scrollRef.value.clientWidth - 30
+        scrollTo = scrollWidth >= 0 ? 0 : scrollWidth
       } else {
         if (Math.abs(translateX + (totalWidth - scrollRef.value.clientWidth)) < 10) {
           return
@@ -138,6 +140,7 @@
   const navbar = computed(() => {
     return appStore.getNavbar
   })
+
   watch(
     () => route.path,
     () => {

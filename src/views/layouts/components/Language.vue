@@ -20,7 +20,7 @@
 </template>
 <script lang="ts" setup>
   import { ClickOutside as vClickOutside } from 'element-plus'
-  import { useLocale } from '/@/store/locale'
+  import { useLocale } from '../../../store/modules/locale'
 
   const buttonRef = ref()
   const popoverRef = ref()
@@ -33,11 +33,12 @@
   }
   const localeStore = useLocale()
   const languages = ref<Array<Language>>([
-    { locale: 'es', label: 'English' },
-    { locale: 'zh-cn', label: '简体中文' },
+    { locale: 'en', label: 'English' },
+    { locale: 'zh-CN', label: '简体中文' },
   ])
   function toggleLanguage(item: Language) {
     const { locale } = item
     localeStore.setLocale(locale)
+    location.reload()
   }
 </script>

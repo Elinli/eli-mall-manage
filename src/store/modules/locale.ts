@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { store } from '..'
 
 export const useLocale = defineStore('locale', {
   state: () => ({
@@ -25,3 +26,8 @@ export const useLocale = defineStore('locale', {
     ],
   },
 })
+
+// Need to be used outside the setup
+export function useLocaleStoreWithOut() {
+  return useLocale(store)
+}

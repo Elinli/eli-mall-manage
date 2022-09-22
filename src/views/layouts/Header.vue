@@ -16,12 +16,16 @@
       <Fullscreen />
       <Language />
       <UserInfo />
+      <span>{{ t('common.searchText') }}</span>
+      <span>{{ t('routes.system.charts.googleMap') }}</span>
     </div>
   </div>
 </template>
 <script setup lang="ts">
-  import { useApp } from '/@/store/app'
+  import { useApp } from '../../store/modules/app'
   import { Search, Fullscreen, Language, UserInfo } from './components'
+  import { useI18n } from '/@/hooks/useI18n'
+  const { t } = useI18n()
 
   const appStore = useApp()
 

@@ -3,7 +3,8 @@ import { AppRouteModule } from '/@/router/constant'
 const category: AppRouteModule = {
   path: '/category',
   name: 'Category',
-  component: 'Default',
+  icon: 'menu-home',
+  component: 'Layout',
   meta: {
     title: '分类',
   },
