@@ -14,13 +14,13 @@ export default defineComponent({
   setup(this, props, _ctx) {
     const { t } = useI18n()
     const menuData = toRaw(props).menuData as unknown as AppRouteModule[]
-    const renderSubmenu = (menuItem: AppRouteModule) => {
+    const renderSubmenu = (menuItem: AppRouteModule | any) => {
       const slots = {
         title: () => {
           return (
             <>
               <SvgIcon name={menuItem.icon || ''} style={{ marginRight: '10px' }} />
-              <span>{t(menuItem.meta.title)}</span>
+              <span>{t(menuItem.meta.title) || ''}</span>
             </>
           )
         },
@@ -32,11 +32,11 @@ export default defineComponent({
         </ElSubMenu>
       )
     }
-    const renderMenuItem = (menuItem: AppRouteModule) => {
+    const renderMenuItem = (menuItem: AppRouteModule | any) => {
       return (
         <ElMenuItem index={menuItem.path}>
           <SvgIcon name={menuItem.icon || ''} style={{ marginRight: '10px' }} />
-          <span>{t(menuItem.meta.title)}</span>
+          <span>{t(menuItem.meta.title) || ''}</span>
         </ElMenuItem>
       )
     }
