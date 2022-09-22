@@ -20,7 +20,7 @@ function getKey(namespace: string | undefined, key: string) {
   }
   return `${namespace}.${key}`
 }
-
+// @ts-ignore
 export function useI18n(namespace?: string): {
   t: I18nGlobalTranslation
 } {
@@ -35,7 +35,6 @@ export function useI18n(namespace?: string): {
   }
 
   const { t, ...methods } = i18n.global
-
   const tFn: I18nGlobalTranslation = (key: string, ...arg: any[]) => {
     if (!key) return ''
     if (!key.includes('.') && !namespace) return key
