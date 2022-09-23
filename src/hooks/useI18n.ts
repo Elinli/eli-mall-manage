@@ -1,13 +1,13 @@
 import { i18n } from '/@/locales/setupI18n'
 
-type I18nGlobalTranslation = {
-  (key: string): string
-  (key: string, locale: string): string
-  (key: string, locale: string, list: unknown[]): string
-  (key: string, locale: string, named: Record<string, unknown>): string
-  (key: string, list: unknown[]): string
-  (key: string, named: Record<string, unknown>): string
-}
+// type I18nGlobalTranslation = {
+//   (key: string): string
+//   (key: string, locale: string): string
+//   (key: string, locale: string, list: unknown[]): string
+//   (key: string, locale: string, named: Record<string, unknown>): string
+//   (key: string, list: unknown[]): string
+//   (key: string, named: Record<string, unknown>): string
+// }
 
 // type I18nTranslationRestParameters = [string, any]
 
@@ -21,9 +21,7 @@ function getKey(namespace: string | undefined, key: string) {
   return `${namespace}.${key}`
 }
 // @ts-ignore
-export function useConfigI18n(namespace?: string): {
-  t: I18nGlobalTranslation
-} {
+export function useConfigI18n(namespace?: string) {
   const normalFn = {
     t: (key: string) => {
       return getKey(namespace, key)
@@ -35,7 +33,7 @@ export function useConfigI18n(namespace?: string): {
   }
 
   const { t, ...methods } = i18n.global
-  const tFn: I18nGlobalTranslation = (key: string) => {
+  const tFn = (key: string) => {
     if (!key) return ''
     if (!key.includes('.') && !namespace) return key
     return t(key)
