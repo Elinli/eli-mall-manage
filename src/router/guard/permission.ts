@@ -23,6 +23,7 @@ export function createPermissionGuard(router: Router) {
         router.addRoute(route as unknown as RouteRecordRaw)
       })
       isAsync = false
+
       next({ path: to.fullPath, replace: true, query: to.query })
     } else {
       next()
