@@ -1,5 +1,4 @@
-import { i18n } from '/@/locales/setupI18n'
-
+import { useI18n } from 'vue-i18n'
 // type I18nGlobalTranslation = {
 //   (key: string): string
 //   (key: string, locale: string): string
@@ -11,35 +10,15 @@ import { i18n } from '/@/locales/setupI18n'
 
 // type I18nTranslationRestParameters = [string, any]
 
-function getKey(namespace: string | undefined, key: string) {
-  if (!namespace) {
-    return key
-  }
-  if (key.startsWith(namespace)) {
-    return key
-  }
-  return `${namespace}.${key}`
-}
 // @ts-ignore
 export function useConfigI18n(namespace?: string) {
-  const normalFn = {
-    t: (key: string) => {
-      return getKey(namespace, key)
-    },
-  }
-
-  if (!i18n) {
-    return normalFn
-  }
-
-  const { t, ...methods } = i18n.global
+  const { t } = useI18n()
   const tFn = (key: string) => {
     if (!key) return ''
     if (!key.includes('.') && !namespace) return key
     return t(key)
   }
   return {
-    ...methods,
     t: tFn,
   }
 }
