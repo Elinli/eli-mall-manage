@@ -34,3 +34,6 @@ export const getParentLayout = (_name?: string) => {
       })
     })
 }
+
+export const LAYOUT = () => import('/@/views/layouts/index.vue')
+export const EXCEPTION_COMPONENT = () => import('/@/views/exception/index.vue')

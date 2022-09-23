@@ -8,13 +8,13 @@
       <li
         :class="[
           'language-item',
-          localeStore.getLocale.toLowerCase() === item.locale ? 'is-active' : '',
+          localeStore.getLocale.toLowerCase() === item.locale.toLowerCase() ? 'is-active' : '',
         ]"
         @click="toggleLanguage(item)"
         v-for="item in languages"
         :key="item.locale"
-        >{{ item.label }}</li
-      >
+        >{{ item.label }}
+      </li>
     </ul>
   </el-popover>
 </template>

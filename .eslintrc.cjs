@@ -78,7 +78,7 @@ module.exports = defineConfig({
     // 强制在代码块中使用一致的大括号风格
     'brace-style': 'warn',
     // 强制使用骆驼拼写法命名约定
-    camelcase: 'warn',
+    camelcase: 'off',
     // 强制使用一致的缩进
     indent: 'off',
     semi: 0,

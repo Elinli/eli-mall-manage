@@ -7,16 +7,19 @@ import 'virtual:svg-icons-register'
 import './global-style.css'
 
 import App from './App.vue'
-import router from '/@/router'
+import router, { setupRouter } from '/@/router'
 import SvgIcon from '/@/components/SvgIcon/index.vue'
 import { setupStore } from '/@/store'
 import { setupI18n } from '/@/locales/setupI18n'
+import { setupRouterGuard } from './router/guard'
 
 async function bootstrap() {
   const app = createApp(App)
   setupStore(app)
   await setupI18n(app)
-  app.component('EliSvgIcon', SvgIcon).use(router)
+  setupRouter(app)
+  setupRouterGuard(router)
+  app.component('EliSvgIcon', SvgIcon)
   app.mount('#app')
 }
 bootstrap()
