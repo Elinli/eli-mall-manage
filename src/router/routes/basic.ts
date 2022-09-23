@@ -60,7 +60,7 @@ export const ERROR_LOG_ROUTE: AppRouteRecordRaw = {
     {
       path: 'list',
       name: 'ErrorLogList',
-      component: () => import('/@/views/sys/error-log/index.vue'),
+      component: () => import('/@/views/error-log/index.vue'),
       meta: {
         title: 'routes.basic.errorLogList',
         hideBreadcrumb: true,
