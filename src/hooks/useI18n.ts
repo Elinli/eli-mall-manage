@@ -38,7 +38,6 @@ export function useConfigI18n(namespace?: string): {
   const tFn: I18nGlobalTranslation = (key: string) => {
     if (!key) return ''
     if (!key.includes('.') && !namespace) return key
-    console.log(namespace, key)
     return t(key)
   }
   return {
