@@ -16,7 +16,9 @@
             :class="{ 'item-box': true, 'is-active': item.path === router.currentRoute.value.path }"
           >
             {{ t(item.meta.title) }}
-            <div class="icon close" @click.stop="onClickClose(item, index)"><i-ep-close /></div>
+            <div class="icon close" @click.stop="onClickClose(item, index)" v-if="navbar.length > 1"
+              ><i-ep-close
+            /></div>
           </div>
         </div>
       </div>
@@ -142,6 +144,7 @@
   const navbar = computed(() => {
     return appStore.getNavbar
   })
+  console.log(navbar.value)
 
   watch(
     () => route.path,
@@ -237,7 +240,7 @@
           .item-box {
             cursor: pointer;
             @include justifyBetween;
-            padding: 0 4px 0 8px;
+            padding: 0 8px 0 8px;
             height: 28px;
             border: 1px solid $gray;
             box-sizing: border-box;
