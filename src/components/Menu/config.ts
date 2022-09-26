@@ -77,7 +77,7 @@ const staticMenu: Array<AppRouteModule> = [
     title: '分类',
     parent: 'root',
     icon: 'menu-system',
-    children: '',
+    children: undefined,
     hiddenChildren: true,
     uniqueId: 1,
     level: 1,

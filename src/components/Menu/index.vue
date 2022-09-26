@@ -13,12 +13,12 @@
 <script lang="ts" setup>
   import { useApp } from '../../store/modules/app'
   import Render from './components/Render'
-  import { asyncRoutes } from '/@/router/routes/index'
-  import { staticMenu } from './config'
+  // import { asyncRoutes } from '/@/router/routes/index'
+  // import { staticMenu } from './config'
   import { AppRouteModule } from '/@/router/constant'
   import { useRouter } from 'vue-router'
   import { getMenus } from '/@/router/menu'
-  console.log(staticMenu, asyncRoutes)
+  // console.log(staticMenu, asyncRoutes)
 
   let menuData = ref<Array<AppRouteModule>>([])
 
