@@ -15,7 +15,7 @@
           <div
             :class="{ 'item-box': true, 'is-active': item.path === router.currentRoute.value.path }"
           >
-            {{ item.meta.title }}
+            {{ t(item.meta.title) }}
             <div class="icon close" @click.stop="onClickClose(item, index)"><i-ep-close /></div>
           </div>
         </div>
@@ -28,6 +28,8 @@
 <script setup lang="ts">
   import BScroll from '@better-scroll/core'
   import { useApp } from '../../store/modules/app'
+  import { useConfigI18n } from '/@/hooks/useI18n'
+  const { t } = useConfigI18n()
   const router = useRouter()
   const appStore = useApp()
   const route = useRoute()

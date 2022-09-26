@@ -187,4 +187,7 @@ export default {
     editRowTable: '可编辑行',
     authColumn: '权限列',
   },
+  employ: {
+    employmgt: '职工管理',
+  },
 }

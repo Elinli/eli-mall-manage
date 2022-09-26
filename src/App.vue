@@ -18,8 +18,10 @@
   const loadRoutesStore = useLoadRoutes()
   onMounted(() => {
     window.addEventListener('beforeunload', function () {
-      loadRoutesStore.setLoadDynamicRoutes(true)
+      loadRoutesStore.setisDynamicAddedRoute(true)
       console.log('before unload', loadRoutesStore)
     })
   })
 </script>
+
+<style lang="scss"></style>

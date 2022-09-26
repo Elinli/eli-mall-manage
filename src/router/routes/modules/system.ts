@@ -10,6 +10,7 @@ const system: AppRouteModule = {
     orderNo: 500,
     icon: 'ion:bar-chart-outline',
     title: '系统管理',
+    type: 'M',
   },
   children: [
     {
@@ -17,6 +18,7 @@ const system: AppRouteModule = {
       name: 'Menu',
       meta: {
         title: '菜单管理',
+        type: 'M',
       },
       component: 'system/menu/index',
     },
@@ -25,6 +27,7 @@ const system: AppRouteModule = {
       name: 'Account',
       meta: {
         title: '账户管理',
+        type: 'M',
       },
       component: 'system/account/index',
     },
@@ -46,6 +49,7 @@ const system: AppRouteModule = {
       name: 'Process',
       meta: {
         title: '流程管理',
+        type: 'M',
       },
       component: 'system/process/index',
       // component: () => import('/@/views/system/map/Google.vue'),
@@ -57,6 +61,7 @@ const system: AppRouteModule = {
       component: 'system/roles/index',
       meta: {
         title: '角色管理',
+        type: 'M',
       },
     },
     {
@@ -65,6 +70,7 @@ const system: AppRouteModule = {
       component: 'default',
       meta: {
         title: '测试管理',
+        type: 'M',
       },
       children: [
         {
@@ -73,6 +79,7 @@ const system: AppRouteModule = {
           component: 'system/testss/unittest/index',
           meta: {
             title: '单元测试',
+            type: 'M',
           },
         },
       ],

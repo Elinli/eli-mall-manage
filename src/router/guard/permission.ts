@@ -17,13 +17,13 @@ export function createPermissionGuard(router: Router) {
       NProgress.done()
       return
     }
-    if (loadRoutesStore.getLoadDynamicRoutes) {
+    if (loadRoutesStore.getisDynamicAddedRoute) {
       await dynamicImportRoutes(asyncRoutes)
       asyncRoutes.forEach((route) => {
         router.addRoute(route as unknown as RouteRecordRaw)
       })
 
-      loadRoutesStore.setLoadDynamicRoutes(false)
+      loadRoutesStore.setisDynamicAddedRoute(false)
       next({ path: to.fullPath, replace: true, query: to.query })
     } else {
       next()

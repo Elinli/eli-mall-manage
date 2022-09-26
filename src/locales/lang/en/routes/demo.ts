@@ -196,4 +196,7 @@ export default {
     editRowTable: 'Editable row',
     authColumn: 'Auth column',
   },
+  employ: {
+    employmgt: 'employManage',
+  },
 }

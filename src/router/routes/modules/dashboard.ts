@@ -4,20 +4,22 @@ const dashboard: AppRouteModule = {
   path: '/dashboard',
   name: 'Dashboard',
   icon: 'menu-home',
-  component: 'layouts/index',
+  component: 'Layout',
   redirect: '/dashboard/index',
   meta: {
     orderNo: 500,
+    type: 'M',
     icon: 'ion:bar-chart-outline',
     title: 'routes.dashboard.dashboard',
   },
   children: [
     {
       path: 'index',
-      name: 'Index',
+      name: 'DashboardIndex',
       component: 'dashboard/index',
       meta: {
         title: 'routes.dashboard.workbench',
+        type: 'M',
       },
     },
   ],

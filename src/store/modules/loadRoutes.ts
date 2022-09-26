@@ -1,19 +1,18 @@
 import { defineStore } from 'pinia'
 
 interface LoadRoutesState {
-  loadDynamicRoutes: boolean
+  isDynamicAddedRoute: boolean
 }
 export const useLoadRoutes = defineStore('loadRoutes', {
-  state: () =>
-    ({
-      loadDynamicRoutes: true,
-    } as LoadRoutesState),
+  state: (): LoadRoutesState => ({
+    isDynamicAddedRoute: true,
+  }),
   getters: {
-    getLoadDynamicRoutes: ({ loadDynamicRoutes }) => loadDynamicRoutes,
+    getisDynamicAddedRoute: ({ isDynamicAddedRoute }) => isDynamicAddedRoute,
   },
   actions: {
-    setLoadDynamicRoutes(loadDynamicRoutes: boolean) {
-      this.loadDynamicRoutes = loadDynamicRoutes
+    setisDynamicAddedRoute(isDynamicAddedRoute: boolean) {
+      this.isDynamicAddedRoute = isDynamicAddedRoute
     },
   },
 })

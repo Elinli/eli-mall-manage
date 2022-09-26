@@ -17,16 +17,22 @@
   import { staticMenu } from './config'
   import { AppRouteModule } from '/@/router/constant'
   import { useRouter } from 'vue-router'
+  import { getMenus } from '/@/router/menu'
   console.log(staticMenu, asyncRoutes)
 
   let menuData = ref<Array<AppRouteModule>>([])
-  menuData.value = asyncRoutes as Array<AppRouteModule>
 
+  menuData.value = getMenus() as unknown as AppRouteModule[]
   const appStore = useApp()
   const isCollapse = computed(() => appStore.getIsCollapse)
 
   const router = useRouter()
   const currentActiveRoute = computed(() => {
+    console.log(router.currentRoute.value)
+    const matched = router.currentRoute.value.matched
+    if (matched[0].children.length <= 1) {
+      return matched[0].path
+    }
     if (router.currentRoute.value.meta.currentActiveMenu) {
       return router.currentRoute.value.meta.currentActiveMenu
     } else {

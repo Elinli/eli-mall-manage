@@ -7,6 +7,7 @@ const category: AppRouteModule = {
   component: 'Layout',
   meta: {
     title: '分类',
+    type: 'M',
   },
   redirect: '/category/index',
   children: [
@@ -17,6 +18,7 @@ const category: AppRouteModule = {
       meta: {
         title: '分类',
         keepAlive: true,
+        type: 'M',
       },
     },
     {
