@@ -27,7 +27,6 @@ export function createPermissionGuard(router: Router) {
     } else {
       next()
     }
-    console.log(to, to.path)
 
     const allRoutes = router.getRoutes()
     const isToPathExist = allRoutes.some((item) => item.path === to.path)
