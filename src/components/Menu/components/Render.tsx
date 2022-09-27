@@ -37,7 +37,7 @@ export default defineComponent({
       return (
         <ElMenuItem index={menuItem.path}>
           <SvgIcon name={menuItem.icon || ''} style={{ marginRight: '10px' }} />
-          <span>{t(menuItem.meta.title, { msg: 'hello' }) || ''}</span>
+          <span>{t(menuItem.meta.title) || ''}</span>
         </ElMenuItem>
       )
     }
