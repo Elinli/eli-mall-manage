@@ -9,7 +9,7 @@ const employees: AppRouteModule = {
   meta: {
     orderNo: 500,
     icon: 'ion:bar-chart-outline',
-    title: '职工管理',
+    title: 'routes.demo.employ.employmgt',
     type: 'M',
   },
   children: [
