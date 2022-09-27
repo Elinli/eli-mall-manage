@@ -8,15 +8,17 @@ import { useI18n } from 'vue-i18n'
 //   (key: string, named: Record<string, unknown>): string
 // }
 
-type I18nTranslationRestParameters = [string, any]
+// type I18nTranslationRestParameters = [string, any]
 
 // @ts-ignore
 export function useConfigI18n(namespace?: string) {
   const { t } = useI18n()
   function tFn(key: string, ...args: any) {
+    console.log(...args)
+
     if (!key) return ''
     if (!key.includes('.') && !namespace) return key
-    return t(key, ...(args as I18nTranslationRestParameters))
+    return t(key)
   }
   return {
     t: tFn,
