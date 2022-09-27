@@ -15,7 +15,9 @@ export function useConfigI18n(namespace?: string) {
   const { t } = useI18n()
   function tFn(key: string, ...args: any) {
     if (!key) return ''
+
     if (!key.includes('.') && !namespace) return key
+
     return t(key, ...(args as I18nTranslationRestParameters))
   }
   return {
