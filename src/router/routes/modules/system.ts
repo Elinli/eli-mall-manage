@@ -31,6 +31,17 @@ const system: AppRouteModule = {
       },
       component: 'system/account/index',
     },
+
+    {
+      path: 'process',
+      name: 'Process',
+      meta: {
+        title: '流程管理',
+        type: 'M',
+      },
+      component: 'system/process/index',
+      // component: () => import('/@/views/system/map/Google.vue'),
+    },
     {
       path: 'account_detail/:id',
       name: 'AccountDetail',
@@ -44,17 +55,6 @@ const system: AppRouteModule = {
       component: 'system/account/AccountDetail',
       // component: () => import('/@/views/system/map/Gaode.vue'),
     },
-    {
-      path: 'process',
-      name: 'Process',
-      meta: {
-        title: '流程管理',
-        type: 'M',
-      },
-      component: 'system/process/index',
-      // component: () => import('/@/views/system/map/Google.vue'),
-    },
-
     {
       path: 'roles',
       name: 'Roles',

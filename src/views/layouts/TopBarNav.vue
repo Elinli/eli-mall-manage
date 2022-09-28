@@ -13,7 +13,13 @@
           @click="onClickBarItem(item, index)"
         >
           <div
-            :class="{ 'item-box': true, 'is-active': item.path === router.currentRoute.value.path }"
+            :class="{
+              'item-box': true,
+              'is-active':
+                item.path === router.currentRoute.value.path ||
+                (router.currentRoute.value.meta &&
+                  item.path === router.currentRoute.value.meta.currentActiveMenu),
+            }"
           >
             {{ t(item.meta.title) }}
             <div class="icon close" @click.stop="onClickClose(item, index)" v-if="navbar.length > 1"
@@ -63,7 +69,7 @@
     }, 0)
   }
 
-  function onClickBarItem(item: any, index: number) {
+  function onClickBarItem(_item: any, index: number) {
     const els = document.getElementsByClassName('scroll-item')
     const firstChild = scrollRef.value.firstChild
     const compStyles = window.getComputedStyle(firstChild)
@@ -84,7 +90,13 @@
           return pre + cur.offsetWidth
         }, 0)
         if (Math.abs(translateX) > totalWidthPre) {
-          bs.value.scrollTo(0 - totalWidthPre + 30, 0, 100, undefined, {})
+          bs.value.scrollTo(
+            0 - totalWidthPre + totalWidthNext - totalWidthPre,
+            0,
+            100,
+            undefined,
+            {},
+          )
         } else if (Math.abs(translateX) + scrollRef.value.clientWidth < totalWidthNext) {
           bs.value.scrollTo(
             scrollRef.value.clientWidth - totalWidthNext - 30,
@@ -104,7 +116,7 @@
         bs.value.scrollTo(scrollRef.value.clientWidth - totalWidthNext - 30, 0, 100, undefined, {})
       }
     }
-    router.push({ path: item.path })
+    // router.push({ path: item?.path })
   }
 
   function onClickTransition(type: string) {
