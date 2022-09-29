@@ -69,7 +69,7 @@
     }, 0)
   }
 
-  function onClickBarItem(_item: any, index: number) {
+  function onClickBarItem(item: any, index: number) {
     const els = document.getElementsByClassName('scroll-item')
     const firstChild = scrollRef.value.firstChild
     const compStyles = window.getComputedStyle(firstChild)
@@ -116,7 +116,7 @@
         bs.value.scrollTo(scrollRef.value.clientWidth - totalWidthNext - 30, 0, 100, undefined, {})
       }
     }
-    // router.push({ path: item?.path })
+    router.push({ path: item?.path })
   }
 
   function onClickTransition(type: string) {
