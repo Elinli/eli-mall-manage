@@ -51,7 +51,6 @@ export const useApp = defineStore('app', {
       if (type === 'delete') {
         this.navbar = this.navbar.filter((barItem) => barItem.path !== navbarItem.path)
       } else {
-        console.log(this.navbar)
         const isExist = this.navbar.some((item) => item.path === navbarItem.path)
         if (!isExist) this.navbar.push(navbarItem)
       }
